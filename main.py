@@ -1,21 +1,20 @@
+import json
+from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.service import Service
-from time import sleep
 
-links = [
-    "todamateria.com.br",
-    "brasilescola.uol.com.br",
-    "infoescola.com",
-    "mundoeducacao.uol.com.br"
-] #links a serem pesquisados (Podem ser parcias)
+
+
+with open("links.json", "r") as json_file:
+    links = json.load(json_file)
 
 request = input(": ")
 
 service = Service(r".\chromedriver.exe")
 service.start()
 
-driver = webdriver.Remote(service.service_url) # driver = webdriver.Chrome()
+driver = webdriver.Remote(service.service_url)
 driver.get("https://www.google.com.br/")
 
 
@@ -24,6 +23,7 @@ elem[0].send_keys(request)
 elem[0].send_keys(Keys.ENTER)
 
 
-for site in links:
+for site in links["names"]:
     elem = driver.find_elements_by_partial_link_text(site)
     elem[0].send_keys(Keys.CONTROL + Keys.ENTER)
+    sleep(1.5)
