@@ -23,7 +23,7 @@ elem[0].send_keys(request)
 elem[0].send_keys(Keys.ENTER)
 
 
-for site in links["names"]:
+for site in links["normal links"]:
     elem = driver.find_elements_by_partial_link_text(site)
     elem[0].send_keys(Keys.CONTROL + Keys.ENTER)
     sleep(1.5)
