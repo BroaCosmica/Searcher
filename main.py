@@ -1,14 +1,21 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.chrome.service import Service
-from time import sleep
 import json
+from time import sleep
+
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.keys import Keys
+
+from kivy_window import Searcher
 
 
 with open("links.json", "r") as json_file:
     links = json.load(json_file)
 
-request = input(": ")
+kivy_app = Searcher()
+kivy_app.run()
+
+
+request = kivy_app.researcher()
 
 service = Service(r"./chromedriver.exe")
 service.start()

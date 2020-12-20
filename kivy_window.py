@@ -1,7 +1,7 @@
 from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
-from kivy.ui.button import Button
-from kivy.ui.textinput import TextInput
+from kivy.uix.button import Button
+from kivy.uix.textinput import TextInput
 
 
 class Searcher(App):
@@ -26,5 +26,12 @@ class Searcher(App):
 
         self.btn_search.bind(on_press=self.researcher)
 
-    def researcher(self):
+        return layout
+
+    def researcher(self, *args):
         return self.txtinput.text
+        Searcher().stop()
+
+
+if __name__ == "__main__":
+    Searcher().run()
