@@ -5,15 +5,14 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.keys import Keys
 
-from kivy_window import Searcher
+from kivy_window import MyApp
 
 
 with open("links.json", "r") as json_file:
     links = json.load(json_file)
 
-kivy_app = Searcher()
+kivy_app = MyApp()
 kivy_app.run()
-
 
 request = kivy_app.researcher()
 
