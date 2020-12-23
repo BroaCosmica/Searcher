@@ -2,6 +2,7 @@ from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
+from kivy.uix.image import Image
 
 
 class MyApp(App):
@@ -22,6 +23,9 @@ class MyApp(App):
             multiline=False
         )
 
+        self.back_image = Image(source="./media/background.png")
+
+        layout.add_widget(self.back_image)
         layout.add_widget(self.btn_search)
         layout.add_widget(self.txtinput)
 
@@ -31,8 +35,9 @@ class MyApp(App):
 
     def researcher(self, *args):
         text = self.txtinput.text
-        MyApp().stop()
-        return text
+        if text != "":
+            MyApp().stop()
+            return text
 
 # if __name__ == "__main__":
 #     MyApp().run()
