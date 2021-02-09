@@ -1,4 +1,4 @@
-import json
+import chromedriver_autoinstaller
 from time import sleep
 
 from selenium import webdriver
@@ -6,12 +6,11 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.keys import Keys
 
 from kivy_window import MyApp
-import chromedriver_autoinstaller
+from base_functions import j_scraper
 
 
 
-with open("links.json", "r") as json_file:
-    links = json.load(json_file)
+links = j_scraper("links.json")
 
 
 kivy_app = MyApp()
@@ -30,8 +29,7 @@ driver = webdriver.Chrome()
 driver.get("https://www.google.com.br/")
 
 
-elem = driver.find_elements_by_xpath(
-    '//*[@id="tsf"]/div[2]/div[1]/div[1]/div/div[2]/input')
+elem = driver.find_elements_by_xpath('//*[@id="tsf"]/div[2]/div[1]/div[1]/div/div[2]/input')
 elem[0].send_keys(request)
 elem[0].send_keys(Keys.ENTER)
 
