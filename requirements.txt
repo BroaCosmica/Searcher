@@ -1,0 +1,9 @@
+# Selenium to automate the browser
+selenium
+
+# Kivy to create the UI
+kivy[base]
+kivy_examples
+
+# chromedriver-autoinstaller to manage the version of chromedriver
+chromedriver-autoinstaller
