@@ -9,7 +9,7 @@ First you should use a virtual environment:
     python -m virtualenv venv
 
 
-Then install the packages, <em> or you can do pip install -r requirements.txt<em>:
+Then install the packages, <em> or you can do pip install -r requirements.txt</em>:
 
 * pip install selenium
 * pip install kivy[base] kivy_examples
