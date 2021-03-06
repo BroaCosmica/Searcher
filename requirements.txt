@@ -5,5 +5,5 @@ selenium
 kivy[base]
 kivy_examples
 
-# chromedriver-autoinstaller to manage the version of chromedriver
+# Chromedriver AutoInstaller to manage the version of chromedriver
 chromedriver-autoinstaller
